@@ -21,7 +21,7 @@ function App() {
         <div className="grid md:grid-rows-6 md:grid-cols-5 md:grid-flow-col gap-4 h-72">
           <HeaderLeftTop/>
           <HeaderLeftBottom/>
-          <HeaderRight/>
+          <HeaderRight coinsData={coinsData}/>
         </div>
       </div>
     </div>
