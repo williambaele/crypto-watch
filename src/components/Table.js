@@ -5,7 +5,9 @@ const Table = ({coinsData}) => {
 
 
   const [rangeNumber, setRangeNumber] = useState(100);
+  const [orderBy, setOrderBy] = useState("");
 
+  const tableHeader = [ "Prix", "MarketCap", "Volume", "1h", "1j", "1s","1m", "6m", "1y", "ATH"];
 
   return (
 
@@ -19,37 +21,15 @@ const Table = ({coinsData}) => {
               <th scope="col" className="px-6 py-3">
                 <input type="range" min="1" max="250" value={rangeNumber} onChange={(e) => setRangeNumber(e.target.value)} />
               </th>
-              <th scope="col" className="px-6 py-3">
-                <input type="radio" id="prix" className="hidden"/>
-                <label htmlFor="prix">Prix</label>
-              </th>
-              <th scope="col" className="px-6 py-3">
-                MarketCap
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Volume
-              </th>
-              <th scope="col" className="px-6 py-3">
-                1h
-              </th>
-              <th scope="col" className="px-6 py-3">
-                1j
-              </th>
-              <th scope="col" className="px-6 py-3">
-                1s
-              </th>
-              <th scope="col" className="px-6 py-3">
-                1m
-              </th>
-              <th scope="col" className="px-6 py-3">
-                6m
-              </th>
-              <th scope="col" className="px-6 py-3">
-                1y
-              </th>
-              <th scope="col" className="px-6 py-3">
-                ATH
-              </th>
+              {tableHeader.map((el) => (
+                <th scope="col" className="px-6 py-3" key={el}>
+                 <input type="radio" id={el} name="header-el" className="hidden" defaultChecked={
+                   el === orderBy || el === orderBy + "reverse" ? true : false
+                 }/>
+                 <label htmlFor={el}>{el}</label>
+               </th>
+              )
+              )}
             </tr>
         </thead>
         <tbody>
