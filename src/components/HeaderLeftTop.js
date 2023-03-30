@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import PercentChange from './PercentChange';
 
 const HeaderLeftTop = () => {
 
@@ -12,23 +13,22 @@ const HeaderLeftTop = () => {
   }, [])
 
   return (
-    <div className="md:col-span-1 md:row-span-4 bg-green-200 rounded-md shadow-sm grid p-2">
-      <h1 className="text-4xl font-large text-center text-gray-600">Crypto Watch</h1>
-      <div className="flex flex-col justify-center">
-        <div className="flex gap-4">
-          <p className="text-md font-large">Nombre de crypto:</p>
-          <p className="text-md">
-            {headerData.active_cryptocurrencies &&
-            headerData.active_cryptocurrencies.toLocaleString()}
-          </p>
-        </div>
-        <div className="flex gap-4">
-          <p className="text-md font-medium">Marchés:</p>
-          <p className="text-md">
-            {headerData.markets &&
+    <div className="md:col-span-1 md:row-span-4 bg-[#E5E5E5] rounded-md shadow-sm grid p-2 px-4">
+      <div className="grid grid-cols-2 gap-2 w-full">
+        <p className="col-span-1 text-md font-large">Nombre de crypto:</p>
+        <p className=" col-span-1 text-md">
+          {headerData.active_cryptocurrencies &&
+          headerData.active_cryptocurrencies.toLocaleString()}
+        </p>
+        <p className="col-span-1 text-md font-large">Marchés:</p>
+        <p className=" col-span-1 text-md">
+          {headerData.markets &&
             headerData.markets}
-          </p>
-        </div>
+        </p>
+        <p className="col-span-1 text-md font-large">Global:</p>
+        <p className=" col-span-1 text-md">
+          <PercentChange percent={headerData.market_cap_change_percentage_24h_usd}/>
+        </p>
       </div>
     </div>
   );
