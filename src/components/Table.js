@@ -17,10 +17,11 @@ const Table = ({coinsData}) => {
                 Top <input className="bg-[#121420] pl-2 text-sm text-gray-500 uppercase w-1/3 outline-none" type="text" value={rangeNumber} onChange={(e) => setRangeNumber(e.target.value)} />
               </th>
               <th scope="col" className="px-6 py-3">
-                XXXX
+                <input type="range" min="1" max="250" value={rangeNumber} onChange={(e) => setRangeNumber(e.target.value)} />
               </th>
               <th scope="col" className="px-6 py-3">
-                Prix
+                <input type="radio" id="prix" className="hidden"/>
+                <label htmlFor="prix">Prix</label>
               </th>
               <th scope="col" className="px-6 py-3">
                 MarketCap
