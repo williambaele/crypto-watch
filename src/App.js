@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import HeaderLeftBottom from "./components/HeaderLeftBottom";
 import HeaderLeftTop from "./components/HeaderLeftTop";
 import HeaderRight from "./components/HeaderRight";
+import Table from "./components/Table";
 
 function App() {
   const [coinsData, setCoinsData] = useState([]);
@@ -16,13 +17,14 @@ function App() {
 
 
   return (
-    <div className="h-screen bg-[#1b2432] py-10 px-4 md:px-0">
+    <div className="min-h-screen bg-[#1b2432] py-10 px-4 md:px-0">
       <div className="container mx-auto">
-        <div className="grid md:grid-rows-6 md:grid-cols-5 md:grid-flow-col gap-4 h-72">
+        <div className="grid md:grid-rows-6 md:grid-cols-5 md:grid-flow-col gap-4 h-72 mb-10">
           <HeaderLeftTop/>
           <HeaderLeftBottom/>
           <HeaderRight coinsData={coinsData}/>
         </div>
+        <Table coinsData={coinsData}/>
       </div>
     </div>
   );
