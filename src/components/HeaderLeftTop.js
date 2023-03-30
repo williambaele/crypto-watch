@@ -31,13 +31,13 @@ const HeaderLeftTop = () => {
         </p>
         <p className="col-span-1 text-md font-large">BTC Dominance:</p>
         <p className=" col-span-1 text-md">
-          {headerData.markets &&
-            headerData.markets}
+          {headerData.market_cap_percentage &&
+          headerData.market_cap_percentage.btc.toFixed(2) + "%"}
         </p>
         <p className="col-span-1 text-md font-large">ETC Dominance:</p>
         <p className=" col-span-1 text-md">
-          {headerData.markets &&
-            headerData.markets}
+          {headerData.market_cap_percentage &&
+            headerData.market_cap_percentage.eth.toFixed(2)+ "%"}
         </p>
 
       </div>
