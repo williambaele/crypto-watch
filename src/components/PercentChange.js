@@ -14,7 +14,7 @@ const PercentChange = ({percent}) => {
     } else {
       setColor("#FFFFF")
     }
-  }, [])
+  }, [percent])
 
   return (
     <p className="percent-change-container" style={{color}}>
