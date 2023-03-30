@@ -15,7 +15,9 @@ const Home = () => {
           <p>Aucune liste</p>
           <p>Liste de favoris</p>
         </div>
-        <div className="md:col-span-2 md:row-span-6 bg-red-200 rounded-md shadow-sm">02</div>
+        <div className="md:col-span-2 md:row-span-6 bg-red-200 rounded-md shadow-sm">
+
+        </div>
       </div>
       </div>
     </div>
