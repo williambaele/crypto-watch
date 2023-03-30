@@ -13,7 +13,7 @@ const HeaderRight = ({ coinsData }) => {
         chartData.push({
           name: coinsData[i].symbol.toUpperCase() + " " + coinsData[i].market_cap_change_percentage_24h?.toFixed(2) + "%",
           size: coinsData[i].market_cap,
-          fill: null
+          fill: colorPicker(coinsData[i].price_change_percentage_24h)
         });
       }
     }
@@ -31,19 +31,36 @@ const HeaderRight = ({ coinsData }) => {
     return null;
   }
 
+  const colorPicker = (number) => {
+    if(number >= 20){
+      return "#00cc00";
+    } else if (number >= 5){
+      return "#009900";
+    } else if (number >= 0){
+      return "#006600";
+    } else if (number >= -5){
+      return "#cc0000";
+    } else if (number >= -20){
+      return "#990000";
+    } else {
+      return "#000000";
+    }
+  }
+  console.log(dataArray);
 
   return (
-    <div className="md:col-span-3 md:row-span-6 bg-[#121420] rounded-md shadow-sm">
+    <div className="md:col-span-3 md:row-span-6 bg-[#121420] rounded-md shadow-sm overflow-hidden">
       <Treemap
       width={761}
       height={288}
       data={dataArray}
       dataKey="size"
-      stroke="rg(51,51,51)"
-      fill="black"
+      stroke="rgb(51,51,51)"
+      fill="#121420"
       aspectRatio="1"
-      >
-      <Tooltip content={<TreemapToolTip/>} wrapperStyle={{ outline: "none" }}/>
+      className="content-fit"
+      isAnimationActive={false} >
+      <Tooltip content={<TreemapToolTip/>} wrapperStyle={{ outline: "none" }} />
       </Treemap>
     </div>
   );
