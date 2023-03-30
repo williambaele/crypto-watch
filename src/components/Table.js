@@ -25,7 +25,9 @@ const Table = ({coinsData}) => {
                 <th scope="col" className="px-6 py-3" key={el}>
                  <input type="radio" id={el} name="header-el" className="hidden" defaultChecked={
                    el === orderBy || el === orderBy + "reverse" ? true : false
-                 }/>
+                 } onClick={(e) => {
+                  setOrderBy(el);
+                 }}/>
                  <label htmlFor={el}>{el}</label>
                </th>
               )
