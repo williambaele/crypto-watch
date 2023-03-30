@@ -13,7 +13,7 @@ const HeaderLeftTop = () => {
   }, [])
 
   return (
-    <div className="md:col-span-2 md:row-span-4 bg-[#E5E5E5] rounded-md shadow-sm grid p-2 px-4">
+    <div className="md:col-span-2 md:row-span-4 bg-[#121420] rounded-md shadow-sm grid p-2 px-4">
       <div className="grid grid-cols-2 gap-2 w-full">
         <p className="col-span-1 text-md font-large">Nombre de crypto:</p>
         <p className="col-span-1 text-md">

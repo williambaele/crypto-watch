@@ -23,9 +23,10 @@ code {
 
 h1,h2,h3,h4 {
   font-family: 'Khula', sans-serif;
-  color: #E5E5E5;
+  color: rgb(209 213 219);;
 }
 
-p,a,btn {
+p,a,btn,input,label {
   font-family: 'Kanit', sans-serif;
+  color: rgb(156 163 175);
 }
