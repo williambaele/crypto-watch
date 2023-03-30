@@ -58,7 +58,7 @@ const HeaderRight = ({ coinsData }) => {
       stroke="rgb(51,51,51)"
       fill="#121420"
       aspectRatio="1"
-      className="content-fit"
+      className="content-cover"
       isAnimationActive={false} >
       <Tooltip content={<TreemapToolTip/>} wrapperStyle={{ outline: "none" }} />
       </Treemap>
