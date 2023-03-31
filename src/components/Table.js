@@ -15,8 +15,8 @@ const Table = ({coinsData}) => {
     <table className="w-full text-sm text-left text-gray-500">
         <thead class="text-sm uppercase bg-[#121420]">
             <tr>
-              <th scope="col" className="px-2 py-3 flex items-center">
-                Top <input className="bg-[#121420] pl-2 text-sm text-gray-500 uppercase w-1/3 outline-none" type="text" value={rangeNumber} onChange={(e) => setRangeNumber(e.target.value)} />
+              <th scope="col" className="px-2 py-3 flex items-center w-content">
+                Top <input className="bg-[#121420] pl-2 text-sm text-gray-500 uppercase w-1/4 outline-none" type="text" value={rangeNumber} onChange={(e) => setRangeNumber(e.target.value)} />
               </th>
               <th scope="col" className="px-6 py-3">
                 <input type="range" min="1" max="250" value={rangeNumber} onChange={(e) => setRangeNumber(e.target.value)} />
